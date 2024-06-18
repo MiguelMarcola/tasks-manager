@@ -17,7 +17,8 @@ const insertTasks = async (req, res) => {
   };
 
 const getAllTasks = async (req, res) => {
-  const tasks = await getTasks();
+  const { name } = req.query;
+  const tasks = await getTasks({name});
   res.status(200).json(tasks);
 };
 

@@ -19,8 +19,14 @@ const addTasks = async (tasks) => {
   }
 };
 
-const getTasks = async () => {
-  const tasksSnapshot = await db.collection('tasks').get();
+const getTasks = async ({name}) => {
+  const tasksCollection = db.collection('tasks')
+  if(!name) {
+    const tasksSnapshot = await tasksCollection.get();
+    return tasksSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+  }
+
+  const tasksSnapshot = await tasksCollection.where('responsable', '==', name).get();
   return tasksSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 };
 

@@ -1,17 +1,17 @@
 [
     {
       "description": "Criar Login",
-      "responsable": "bruno",
+      "responsable": "miguel",
       "status": "done"
     },
     {
       "description": "Criar Menu",
-      "responsable": "bruno",
+      "responsable": "miguel",
       "status": "doing"
     },
     {
       "description": "Criar tela de perfil",
-      "responsable": "bruno",
+      "responsable": "miguel",
       "status": "todo"
     }
 ]

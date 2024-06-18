@@ -9,8 +9,8 @@ const insertTasks = async (tasks) => {
   await addTasks(taskObjects);
 };
 
-const showTasks = async () => {
-  const tasks = await getTasks();
+const showTasks = async ({name}) => {
+  const tasks = await getTasks({name});
   tasks.forEach((task, index) => {
     console.log(`${index + 1} - ${task.id} - ${task.description} - ${task.responsable} - ${task.status} - ${task.computer}`);
   });
